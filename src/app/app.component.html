@@ -1,0 +1,22 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Todo List</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+            </form>
+        </div>
+    </nav>
+</header>
+<div class="container" style="margin-top: 100px;">
+    <app-add-todo (todoAdd)="addTodo($event)"  (updateTodoAdd)="updateTodoAddFunc($event)" (showCompletedTodos)="showCompletedTodoList($event)" [updateTodo]="updateTodo"></app-add-todo>
+</div>
+<div class="container mt-5" style="margin-top: 150px; height:500px; overflow-y: scroll;">
+    <app-todos [todos]="todos" [isShowCompleted]="isShowCompleted" (updateTodo)="updateTodoData($event)"></app-todos>
+</div>

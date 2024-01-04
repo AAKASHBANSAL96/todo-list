@@ -1,0 +1,13 @@
+<div *ngIf="todos.length === 0; else showDataBlock">
+    <div class="d-flex justify-content-center">
+        <span class="text-center">No todo</span>
+    </div>
+</div>
+<ng-template #showDataBlock>
+    <div id="accordion">
+        <div *ngFor="let todo of todos">
+            <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)" (toggleActive)="toggleCheckBox($event)"
+                (editTodo)="editTodoData($event)"></app-todo-item>
+        </div>
+    </div>
+</ng-template>
